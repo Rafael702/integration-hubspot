@@ -1,0 +1,12 @@
+spring:
+  application:
+      name: integration-hubspot
+
+server:
+  port: 8081
+
+hubspot:
+  clientId: 30e9b039-47ce-44ce-bc73-62a35627a0b7
+  scope: crm.objects.contacts.read
+  url: https://app.hubspot.com/oauth/authorize
+  redirectUri: http://localhost:8081/oauth-callback
