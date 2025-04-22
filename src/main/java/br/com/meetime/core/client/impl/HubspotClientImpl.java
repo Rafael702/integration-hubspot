@@ -13,8 +13,6 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.reactive.function.client.ClientResponse;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import java.util.Objects;
-
 @Component
 public class HubspotClientImpl implements HubspotClient {
 
