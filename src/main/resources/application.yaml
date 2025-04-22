@@ -8,7 +8,7 @@ server:
 hubspot:
   clientId: 30e9b039-47ce-44ce-bc73-62a35627a0b7
   clientSecret: 6ff4a785-d242-44cf-8c95-44cf345e6b08
-  scope: crm.objects.contacts.read
+  scopes: crm.objects.contacts.read%20crm.objects.contacts.write%20crm.schemas.contacts.write
   url: https://app.hubspot.com/oauth/authorize
   redirectUri: http://localhost:8081/v1/oauth-callback
 

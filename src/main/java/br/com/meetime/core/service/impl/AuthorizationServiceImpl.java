@@ -4,7 +4,6 @@ import br.com.meetime.core.client.HubspotClient;
 import br.com.meetime.core.dto.response.AuthorizationTokenResponse;
 import br.com.meetime.core.dto.response.AuthorizationUrlResponse;
 import br.com.meetime.core.dto.HubspotDto;
-import br.com.meetime.core.dto.response.HubspotTokenResponse;
 import br.com.meetime.core.service.AuthorizationService;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
@@ -28,7 +27,7 @@ public class AuthorizationServiceImpl implements AuthorizationService {
     public AuthorizationUrlResponse generateAuthorizationUrl() throws MalformedURLException {
         URL url = new URL(hubspotDto.getUrl() +
                 "?client_id=" + hubspotDto.getClientId() +
-                "&scope=" + hubspotDto.getScope() +
+                "&scope=" + hubspotDto.getScopes() +
                 "&redirect_uri=" + hubspotDto.getRedirectUri());
         return new AuthorizationUrlResponse(url);
     }

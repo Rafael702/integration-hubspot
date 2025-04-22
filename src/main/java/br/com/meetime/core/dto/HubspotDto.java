@@ -3,14 +3,12 @@ package br.com.meetime.core.dto;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.List;
-
 @Configuration
 @ConfigurationProperties("hubspot")
 public class HubspotDto {
     private String clientId;
     private String clientSecret;
-    private String scope;
+    private String scopes;
     private String redirectUri;
     private String url;
 
@@ -30,12 +28,12 @@ public class HubspotDto {
         this.clientSecret = clientSecret;
     }
 
-    public String getScope() {
-        return scope;
+    public String getScopes() {
+        return scopes;
     }
 
-    public void setScope(String scope) {
-        this.scope = scope;
+    public void setScopes(String scopes) {
+        this.scopes = scopes;
     }
 
     public String getRedirectUri() {
@@ -58,8 +56,8 @@ public class HubspotDto {
     public String toString() {
         return new StringBuilder().append("HubspotDto: {" + "clientId: ")
                 .append(getClientId())
-                .append("scope: ")
-                .append(getScope())
+                .append("scopes: ")
+                .append(getScopes())
                 .append("redirectUrl: ")
                 .append(getRedirectUri())
                 .append("url: ")
