@@ -9,6 +9,7 @@ import java.util.List;
 @ConfigurationProperties("hubspot")
 public class HubspotDto {
     private String clientId;
+    private String clientSecret;
     private String scope;
     private String redirectUri;
     private String url;
@@ -19,6 +20,14 @@ public class HubspotDto {
 
     public void setClientId(String clientId) {
         this.clientId = clientId;
+    }
+
+    public String getClientSecret() {
+        return clientSecret;
+    }
+
+    public void setClientSecret(String clientSecret) {
+        this.clientSecret = clientSecret;
     }
 
     public String getScope() {

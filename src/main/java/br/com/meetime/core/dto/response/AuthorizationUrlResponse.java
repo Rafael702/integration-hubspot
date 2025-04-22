@@ -1,4 +1,4 @@
-package br.com.meetime.core.dto;
+package br.com.meetime.core.dto.response;
 
 import java.net.URL;
 
