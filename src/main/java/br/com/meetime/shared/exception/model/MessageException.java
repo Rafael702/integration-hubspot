@@ -1,10 +1,11 @@
 package br.com.meetime.shared.exception.model;
 
 import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 
 public class MessageException {
     private String message;
-    private LocalDateTime timestamp = LocalDateTime.now();
+    private LocalDateTime timestamp = LocalDateTime.now(ZoneOffset.UTC);
 
     public MessageException(String message) {
         this.message = message;
