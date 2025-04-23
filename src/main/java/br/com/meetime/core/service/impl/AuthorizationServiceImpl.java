@@ -25,9 +25,12 @@ public class AuthorizationServiceImpl implements AuthorizationService {
 
     @Override
     public AuthorizationUrlResponse generateAuthorizationUrl() throws MalformedURLException {
+        String scope = hubspotDto.getScopes().replace(",", "%20");
+
+
         URL url = new URL(hubspotDto.getUrl() +
                 "?client_id=" + hubspotDto.getClientId() +
-                "&scope=" + hubspotDto.getScopes() +
+                "&scope=" + scope +
                 "&redirect_uri=" + hubspotDto.getRedirectUri());
         return new AuthorizationUrlResponse(url);
     }
