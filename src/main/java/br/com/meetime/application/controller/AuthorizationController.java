@@ -3,7 +3,6 @@ package br.com.meetime.application.controller;
 import br.com.meetime.core.dto.response.AuthorizationTokenResponse;
 import br.com.meetime.core.dto.response.AuthorizationUrlResponse;
 import br.com.meetime.core.service.AuthorizationService;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

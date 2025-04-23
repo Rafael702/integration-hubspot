@@ -4,6 +4,7 @@ import br.com.meetime.shared.exception.model.MessageException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingRequestHeaderException;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
@@ -35,6 +36,16 @@ public class ControllerHandler {
                 new MessageException(
                         ex.getFieldError().getDefaultMessage(),
                         ex.getFieldError().getField()
+                )
+        );
+    }
+
+    @ExceptionHandler(MissingServletRequestParameterException.class)
+    public ResponseEntity<MessageException> handlerMissingServletRequestParameterException(MissingServletRequestParameterException ex) {
+        return ResponseEntity.status(ex.getStatusCode()).body(
+                new MessageException(
+                        ex.getMessage(),
+                        ex.getParameterName()
                 )
         );
     }
