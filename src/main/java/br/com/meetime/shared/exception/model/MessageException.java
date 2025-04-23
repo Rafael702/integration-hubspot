@@ -5,7 +5,13 @@ import java.time.ZoneOffset;
 
 public class MessageException {
     private String message;
-    private LocalDateTime timestamp = LocalDateTime.now(ZoneOffset.UTC);
+    private String field;
+    private final LocalDateTime timestamp = LocalDateTime.now(ZoneOffset.UTC);
+
+    public MessageException(String message, String field) {
+        this.message = message;
+        this.field = field;
+    }
 
     public MessageException(String message) {
         this.message = message;
@@ -21,5 +27,9 @@ public class MessageException {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getField() {
+        return field;
     }
 }
